@@ -1,10 +1,21 @@
 import {openDB} from 'idb';import type{Trip}from'./logic';
 const db=()=>openDB('roamwise-v1',1,{upgrade(d){d.createObjectStore('trips',{keyPath:'id'})}});
 import { createClient } from '@supabase/supabase-js';
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
-export const cloudEnabled = Boolean(supabaseUrl && supabaseKey);
-export const supabase = cloudEnabled ? createClient(supabaseUrl, supabaseKey) : null;
+const rawUrl = String(import.meta.env.VITE_SUPABASE_URL || '').trim().replace(/^["']|["']$/g, '');
+const supabaseKey = String(import.meta.env.VITE_SUPABASE_ANON_KEY || '').trim().replace(/^["']|["']$/g, '');
+// Only use the project origin. Supabase SDK adds /auth/v1 and /rest/v1 itself.
+const supabaseUrl = (() => {
+  try {
+    const parsed = new URL(rawUrl);
+    return parsed.protocol === 'https:' && parsed.hostname.endsWith('.supabase.co')
+      ? parsed.origin : '';
+  } catch { return ''; }
+})();
+export const cloudEnabled = Boolean(rawUrl && supabaseKey);
+export const supabaseConfigError = cloudEnabled && !supabaseUrl
+  ? 'Invalid Supabase Project URL. Use https://YOUR-PROJECT.supabase.co (no /rest/v1, /auth/v1 or dashboard path).'
+  : '';
+export const supabase = cloudEnabled && supabaseUrl ? createClient(supabaseUrl, supabaseKey) : null;
 const requireUser = async () => {
   if (!supabase) throw Error('Cloud login is not configured');
   const { data: { user }, error } = await supabase.auth.getUser();
