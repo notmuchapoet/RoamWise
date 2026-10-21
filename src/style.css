@@ -31,3 +31,5 @@ label.preview-activity input[type="checkbox"]{display:block;width:19px!important
 @media(max-width:580px){label.preview-activity{grid-template-columns:22px minmax(0,1fr) auto;gap:9px;padding:14px 2px}.preview-activity .preview-activity-cost{font-size:12px}}
 
 .expense-result{border:1px solid #3c8c8b;background:#173b43;border-radius:11px;padding:20px;margin:14px 0 20px}.expense-result strong{display:block;color:#7de5d9;font-size:19px}.expense-result p{color:#bcd6d9;line-height:1.6;font-size:13px}
+
+.missed-fields{margin:18px 0;padding:20px;background:#143748;border:1px solid #396775;border-radius:12px;display:grid;gap:15px}.missed-fields h3{margin:0;color:#d5f4f4}.missed-fields label{gap:7px}.missed-fields p{margin:0;line-height:1.6}
