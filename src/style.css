@@ -37,3 +37,5 @@ label.preview-activity input[type="checkbox"]{display:block;width:19px!important
 .weather-overview{margin:18px 0;padding:20px;background:#173e49;border:1px solid #39858b;border-radius:12px}.weather-overview h3{margin:0 0 7px}.weather-overview strong{color:#74e6da;font-size:20px}.weather-overview p{font-size:12px;color:#b4d3da;line-height:1.6}.expense-options{margin-top:20px;border-top:1px solid #37636b;padding-top:15px}.expense-option{display:flex;justify-content:space-between;align-items:center;gap:14px;border-bottom:1px solid #315a65;padding:11px 0}.expense-option small{color:#9ac0c6}.expense-option strong{font-size:14px;color:#7be7d9}
 
 .day-heading{margin:28px 0 12px;padding:11px 14px;background:#174252;color:#8bf0e3;font-size:14px;font-weight:800;border-left:3px solid #5ee4d7;border-radius:5px}.day-heading:first-child{margin-top:14px}
+
+.trip-icon-action.trip-delete-action{color:#f4a7a7;border-color:#76515d;background:#3a2737}.trip-icon-action.trip-delete-action:hover{background:#613144;color:#fff;border-color:#df8796}
