@@ -7,3 +7,5 @@
 .auth-card form{display:grid;gap:16px;margin:24px 0}.auth-card form label{display:grid;gap:8px;color:#cae1e9;font-size:13px}
 .auth-card form input{width:100%;border:1px solid #366274;background:#091e2e;color:#effaff;border-radius:8px;padding:13px}
 .auth-card .primary{width:100%;justify-content:center}.auth-error{color:#ffb7a8!important}.auth-actions{display:flex;justify-content:end}
+
+.budget-helper{display:block;font-size:12px;color:#9dbcca;margin-top:6px;line-height:1.5}.budget-conversion{display:block;margin-top:8px;font-size:17px;font-weight:650;color:#81e3d5}.budget-conversion small{font-size:11px;font-weight:400;color:#9bbbc8}.suggestions{max-height:260px;overflow-y:auto}
