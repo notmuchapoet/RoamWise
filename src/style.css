@@ -19,3 +19,13 @@
 
 /* Compact saved-trip actions */
 .trip-actions{display:flex;align-items:center;gap:8px;margin-top:14px;flex-wrap:nowrap}.trip-actions .smallprimary{flex:1;min-width:0;justify-content:center}.trip-actions .trip-icon-action,.tripcard .trip-icon-action{flex:0 0 40px;width:40px;height:40px;min-width:40px;padding:0;display:inline-flex;align-items:center;justify-content:center;background:#173a4c;border:1px solid #3b6274;color:#bce7eb;border-radius:9px;cursor:pointer}.trip-icon-action:hover,.trip-icon-action:focus-visible{background:#225165;border-color:#65dfe1;color:#fff}.tripcard .buttons .trip-icon-action{flex:none}
+
+/* Preview: override generic form label and full-width input styling */
+label.preview-activity{display:grid!important;grid-template-columns:22px minmax(0,1fr) auto;align-items:center;gap:16px;width:100%;padding:16px 8px;min-height:75px;text-align:left;cursor:pointer}
+label.preview-activity input[type="checkbox"]{display:block;width:19px!important;height:19px!important;min-width:19px;padding:0;margin:0;accent-color:#5bded9}
+.preview-activity .preview-activity-info{display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-width:0}
+.preview-activity .preview-activity-info strong{font-size:14px;color:#edfafa;line-height:1.45}
+.preview-activity .preview-activity-info small{font-size:12px;color:#98b9c5;font-weight:400}
+.preview-activity .preview-activity-cost{justify-self:end;white-space:nowrap;font-size:14px;color:#d8f2f0}
+.preview-activity.is-completed .preview-activity-info strong{color:#82a8b6;text-decoration:line-through}
+@media(max-width:580px){label.preview-activity{grid-template-columns:22px minmax(0,1fr) auto;gap:9px;padding:14px 2px}.preview-activity .preview-activity-cost{font-size:12px}}
