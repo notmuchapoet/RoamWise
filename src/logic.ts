@@ -1,4 +1,4 @@
-export type Activity={id:string,name:string,date:string,start:string,duration:number,fixed:boolean,outdoor:boolean,cost:number,paid:boolean};
+export type Activity={id:string,name:string,date:string,start:string,duration:number,fixed:boolean,outdoor:boolean,cost:number,paid:boolean,completed?:boolean};
 export type Trip={id:string,name:string,city:string,country:string,latitude:number|null,longitude:number|null,timezone:string,startDate:string,endDate:string,currency:string,homeCurrency:string,budget:number,activities:Activity[]};
 export type Issue='rain'|'late'|'missed'|'cost';
 export type Strategy='protect'|'relax'|'budget';
